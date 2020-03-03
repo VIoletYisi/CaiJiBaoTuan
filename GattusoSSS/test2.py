@@ -1,1 +1,1 @@
-print('黄家乐是狗')
+print('Hello World!')
