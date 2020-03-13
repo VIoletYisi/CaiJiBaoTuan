@@ -59,3 +59,18 @@ p = n * np.sqrt(0.25 + 0.25 - 2 * 0.5 * 0.5 * np.cos(2 * np.pi / n))
 plt.plot(n,p)
 
 # %%
+y = np.empty((1,21))
+t = np.empty((1,21))
+y[0,0] = 10
+t[0,0] = 0
+for i in range(0,30):
+    y[0,i + 1] = (y[0,i] - 0.5)
+    t[0,i + 1] = mt.sqrt(2 * (10 - y[0,i + 1]) / 9.8) 
+    if y[0,i + 1] == 0:
+        break
+    else:
+        continue
+print(y)
+print(t)
+list(zip(t,y))
+# %%
