@@ -44,11 +44,18 @@ for i, k in total.items():
 
 # %%
 import math as mt
-n = [3, 4, 5, 100, 10000, 1000000]
-print('n\tp\t\t\t'+'n p')
+a = [3, 4, 5, 100, 10000, 1000000]
+print('n\tp\t\t\t' + 'n p')
 for j in range(3):
-    p_1 = n[j] * mt.sqrt((0.25+0.25-2*0.5*0.5*mt.cos(2*mt.pi/n[j])))
-    p_2 = n[3+j] * mt.sqrt((0.25+0.25-2*0.5*0.5*mt.cos(2*mt.pi/n[3+j])))
-    print('{:}\t{:.11f}'.format(n[j],p_1)+'{:>12} {:<.11f}'.format(n[j+3],p_2))
+    p_1 = a[j] * mt.sqrt((0.25 + 0.25 - 2 * 0.5 * 0.5 * mt.cos(2 * mt.pi / a[j])))
+    p_2 = a[3+j] * mt.sqrt((0.25 + 0.25 - 2 * 0.5 * 0.5 * mt.cos(2 * mt.pi / a[3+j])))
+    print('{:}\t{:.11f}'.format(a[j],p_1) + '{:>12} {:<.11f}'.format(a[j+3],p_2))
+
+# %%
+import matplotlib.pyplot as plt
+
+n = np.linspace(0, 1000000, 1000)
+p = n * np.sqrt(0.25 + 0.25 - 2 * 0.5 * 0.5 * np.cos(2 * np.pi / n))
+plt.plot(n,p)
 
 # %%
