@@ -1,15 +1,10 @@
 #%%
 matrix_list=[[1,2,3],[4,5,6],[7,8,9]]
-matrix_1 = []
-for row_1 in matrix_list:
-    matrix_1.append(row_1[-1])
+matrix_1=[matrix_list[i][-1] for i in range (3)]
 print(matrix_1)
 
 #%%
-matrix_2=[]
-for row_2 in matrix_list:
-    value = row_2[1]
-    matrix_2.append(2*value**2)
+matrix_2=[2 * matrix_list[i][1] ** 2 for i in range (3)] 
 print(matrix_2)
 
 
@@ -101,4 +96,14 @@ t = np.arange(0, 1.5, 0.2)
 a = 9.8+0 * t
 plt.plot(t,a)
 
+# %%
+import datetime 
+today=datetime.date(2018,9,1)
+yt=datetime.date(2017,9,1)
+get=str(today-yt)
+u=int(get.split()[0])
+print(u)
+today = np.datetime64('2020-03-10')
+yt= np.datetime64('1900-03-10')
+print(today-yt)
 # %%
