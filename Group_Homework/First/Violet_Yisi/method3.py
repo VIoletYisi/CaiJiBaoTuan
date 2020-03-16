@@ -14,12 +14,8 @@ for i in range(3):
     switch_input[i] = int(raw_input.split('-')[i])
     
 passed_days = str(given_time - origin_time)
-if passed_days == '0:00:00':
-    days = 0
-    weekdays = 0
-else:
-    days = int(passed_days.split()[0])
-    weekdays = days % 7
+days = int(passed_days.split()[0])
+weekdays = days % 7
 
 month = ['January','February','March','April','May','June','July','Augest','September','October','November','December'] 
 weekday = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
