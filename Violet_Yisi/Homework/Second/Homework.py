@@ -38,14 +38,19 @@ for i, k in total.items():
     std:\t{k.std(0)}\n''')
 
 # %%
-import math as mt
-a = [3, 4, 5, 100, 10000, 1000000]
+import math 
+n = np.array([3, 4, 5, 100, 10000, 1000000])
+p = np.sin(math.pi / n) * n
+print(p)
 print('n\tp\t\t\t' + 'n p')
 for j in range(3):
-    p_1 = a[j] * mt.sqrt((0.25 + 0.25 - 2 * 0.5 * 0.5 * mt.cos(2 * mt.pi / a[j])))
-    p_2 = a[3 + j] * mt.sqrt((0.25 + 0.25 - 2 * 0.5 * 0.5 * mt.cos(2 * mt.pi / a[3+j])))
-    print('{:}\t{:.11f}'.format(a[j],p_1) + '{:>12} {:<.11f}'.format(a[j + 3],p_2))
-
+    print('{:}\t{:.11f}'.format(n[j],p[j]) + '{:>12} {:<.11f}'.format(n[j + 3],p[j + 3]))
+#%%
+import pandas as pd
+dataframe = pd.DataFrame({'n':a,'p':p})
+dataframe.to_csv('n-p.csv', index = False,sep=',')
+#%%
+np.savez('np_values', n_values = a , p_values = p )
 # %%
 import matplotlib.pyplot as plt
 
@@ -107,3 +112,14 @@ today = np.datetime64('2020-03-10')
 yt= np.datetime64('1900-03-10')
 print(today-yt)
 # %%
+# define variable
+y = np.linspace(10,0.5,20)
+g = 9.8
+t = np.sqrt((2/g)*(10 - y))
+t_mid = np.convolve(t,[0.5,0.5],'valid') #using method of convolution
+
+# calculate velocity
+v = np.diff(y)/np.diff(t)
+
+# calculate acceleration
+a = np.diff(v)/np.diff(t_mid)
