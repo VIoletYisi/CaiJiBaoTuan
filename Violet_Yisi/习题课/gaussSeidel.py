@@ -24,5 +24,5 @@ def gaussSeidel(iterEqs,x,tol = 1.0e-9):
             dx2 = dx
             omega = 2.0/(1.0 + math.sqrt(1.0 \
                 - (dx2/dx1)**(1.0/p)))
-    print(’Gauss-Seidel failed to converge’)
+    print('Gauss-Seidel failed to converge')
 
